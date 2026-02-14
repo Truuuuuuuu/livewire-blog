@@ -20,7 +20,7 @@ class RolePermissionSeeder extends Seeder
         // Create permissions
         $permissions = [
             'create posts',
-            'edit posts',
+            'edit own posts',
             'edit all posts',
             'delete own posts',
             'delete all posts',
@@ -45,8 +45,8 @@ class RolePermissionSeeder extends Seeder
             'publish posts',
         ]);
 
-        $editorRole = Role::create(['name' => 'author']);
-        $editorRole->givePermissionTo([
+        $authorRole = Role::create(['name' => 'author']);
+        $authorRole->givePermissionTo([
             'create posts',
             'edit own posts',
             'delete own posts',
